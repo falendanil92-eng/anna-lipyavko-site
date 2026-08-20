@@ -96,7 +96,7 @@ h2.section-title {
   align-items: start;
   gap: var(--sp-5);
 }
-.hero-media { position: relative; overflow: hidden; aspect-ratio: 252 / 172; min-height: 14rem; min-width: 0; }
+.hero-media { position: relative; overflow: hidden; aspect-ratio: 252 / 172; min-height: 14rem; }
 .hero-media img {
   width: 100%; height: 100%;
   object-fit: cover;
@@ -107,7 +107,6 @@ h2.section-title {
   flex-direction: column;
   justify-content: center;
   margin-top: -9.92px;
-  min-width: 0;
 }
 .hero-name-row {
   display: flex;
@@ -117,8 +116,8 @@ h2.section-title {
 }
 .hero-sun {
   flex: 0 0 auto;
-  width: clamp(4.5rem, 20vw, 11rem);
-  height: clamp(4.5rem, 20vw, 11rem);
+  width: 11rem;
+  height: 11rem;
   margin-top: 0;
 }
 .hero-name {
@@ -129,7 +128,6 @@ h2.section-title {
   letter-spacing: -0.01em;
   color: var(--ink);
   margin-bottom: 27.14px;
-  min-width: 0;
 }
 .hero-desc {
   color: var(--ink);
@@ -143,11 +141,6 @@ h2.section-title {
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-text { padding: var(--sp-5) var(--sp-3) var(--sp-6); }
-  .hero-media { min-height: 0; }
-}
-@media (max-width: 560px) {
-  .hero-name-row { flex-direction: column; align-items: flex-start; gap: var(--sp-2); }
-  .hero-sun { width: 4.5rem; height: 4.5rem; }
 }
 
 /* ============ Образование — screen 2 ============ */
