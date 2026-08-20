@@ -96,7 +96,7 @@ h2.section-title {
   align-items: start;
   gap: var(--sp-5);
 }
-.hero-media { position: relative; overflow: hidden; aspect-ratio: 252 / 172; min-height: 14rem; }
+.hero-media { position: relative; overflow: hidden; aspect-ratio: 252 / 172; min-height: 14rem; min-width: 0; }
 .hero-media img {
   width: 100%; height: 100%;
   object-fit: cover;
@@ -107,6 +107,7 @@ h2.section-title {
   flex-direction: column;
   justify-content: center;
   margin-top: -9.92px;
+  min-width: 0;
 }
 .hero-name-row {
   display: flex;
@@ -116,8 +117,8 @@ h2.section-title {
 }
 .hero-sun {
   flex: 0 0 auto;
-  width: 11rem;
-  height: 11rem;
+  width: clamp(4.5rem, 20vw, 11rem);
+  height: clamp(4.5rem, 20vw, 11rem);
   margin-top: 0;
 }
 .hero-name {
@@ -128,6 +129,7 @@ h2.section-title {
   letter-spacing: -0.01em;
   color: var(--ink);
   margin-bottom: 27.14px;
+  min-width: 0;
 }
 .hero-desc {
   color: var(--ink);
@@ -141,6 +143,11 @@ h2.section-title {
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-text { padding: var(--sp-5) var(--sp-3) var(--sp-6); }
+  .hero-media { min-height: 0; }
+}
+@media (max-width: 560px) {
+  .hero-name-row { flex-direction: column; align-items: flex-start; gap: var(--sp-2); }
+  .hero-sun { width: 4.5rem; height: 4.5rem; }
 }
 
 /* ============ Образование — screen 2 ============ */
@@ -157,6 +164,7 @@ h2.section-title {
 @media (max-width: 720px) {
   .edu-cols { display: flex; flex-direction: column; gap: var(--sp-3); }
   .edu-col:nth-child(2) { position: static; right: auto; }
+  .edu-col:nth-child(2) .edu-text { white-space: normal; }
 }
 .edu-dot {
   flex: 0 0 auto;
@@ -172,7 +180,7 @@ h2.section-title {
 .projects-col { max-width: 640px; margin-inline: auto; }
 .project-list { display: flex; flex-direction: column; gap: var(--sp-4); }
 .project-row { position: relative; }
-.project-title-row { display: flex; align-items: center; gap: 0.55rem; }
+.project-title-row { display: flex; align-items: center; flex-wrap: wrap; gap: 0.55rem; row-gap: 0.4rem; }
 .project-thumb {
   flex: 0 0 auto;
   width: 9px; height: 9px;
@@ -275,7 +283,7 @@ footer.contact { text-align: left; padding: 20px 0; }
   gap: 0.5rem;
   margin: 0.9rem 0 1rem;
 }
-.contact-item { display: flex; align-items: baseline; gap: var(--sp-4); }
+.contact-item { display: flex; align-items: baseline; gap: var(--sp-4); flex-wrap: wrap; row-gap: 0.3rem; }
 .contact-label {
   font-family: var(--sans);
   font-size: var(--body-size);
