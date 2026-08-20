@@ -134,10 +134,21 @@ h2.section-title {
   max-width: 35.25rem;
 }
 .hero-desc p {
+  position: relative;
   margin: 0;
+  padding-left: 17.8px;
   font-size: 15.8px;
   line-height: 1.28;
-  text-indent: 1.4em;
+}
+.hero-desc p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #cc3738, #820809);
 }
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; }
@@ -332,11 +343,11 @@ footer.contact { text-align: left; padding: 20px 0; }
     <div class="edu-cols reveal">
       <div class="edu-col">
         <span class="edu-dot"></span>
-        <span class="edu-text">Омский технологический институт — факультет художественного<br>моделирования одежды.</span>
+        <span class="edu-text">Омский технологический институт. Факультет художественного<br>моделирования одежды. Омск.</span>
       </div>
       <div class="edu-col">
         <span class="edu-dot"></span>
-        <span class="edu-text">Академия дизайна, Москва. Дизайн интерьера.</span>
+        <span class="edu-text">Академия дизайна. Дизайн интерьера. Москва.</span>
       </div>
     </div>
   </div>
